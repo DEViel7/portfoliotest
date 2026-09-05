@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mel Duarte — Portfólio &amp; Mídia Kit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #EDE8DF;
+    --panel: #FBFAF7;
+    --ink: #211D18;
+    --ink-soft: #514B42;
+    --accent: #6E2430;
+    --brass: #A67C3D;
+    --line: #D8D0C2;
+    --line-strong: #C2B7A2;
+  }
+
+  *{ box-sizing: border-box; }
+
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin:0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Work Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap{
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  a{ color: inherit; }
+
+  h1, h2, h3{
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+
+  p{ margin: 0; }
+
+  /* ---------- NAV ---------- */
+
+  header.nav{
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .nav-row{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    padding: 18px 32px;
+  }
+
+  .nav-mark{
+    font-family:'Fraunces', serif;
+    font-size: 19px;
+    font-weight: 500;
+  }
+
+  .nav-links{
+    display:flex;
+    gap: 28px;
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+
+  .nav-links a{ text-decoration:none; }
+  .nav-links a:hover{ color: var(--accent); }
+
+  @media (max-width: 720px){
+    .nav-links{ display:none; }
+  }
+
+  /* ---------- HERO ---------- */
+
+  .hero{
+    padding: 88px 0 96px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .hero-grid{
+    display:grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 56px;
+    align-items: end;
+  }
+
+  .hero-eyebrow{
+    font-size: 15px;
+    color: var(--accent);
+    margin-bottom: 18px;
+  }
+
+  .hero h1{
+    font-size: 58px;
+    line-height: 1.02;
+    max-width: 11ch;
+  }
+
+  .hero-tagline{
+    margin-top: 22px;
+    max-width: 40ch;
+    font-size: 18px;
+    color: var(--ink-soft);
+  }
+
+  .hero-follow{
+    margin-top: 36px;
+    display:flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+
+  .hero-follow .num{
+    font-family:'Fraunces', serif;
+    font-size: 44px;
+    color: var(--accent);
+  }
+
+  .hero-follow .label{
+    font-size: 15px;
+    color: var(--ink-soft);
+  }
+
+  .photo-slot{
+    aspect-ratio: 4 / 5;
+    width: 100%;
+    border-radius: 2px;
+    background: linear-gradient(155deg, #7C303B 0%, #4A1A22 65%, #2A0F14 100%);
+    display:flex;
+    align-items:flex-end;
+    padding: 20px;
+  }
+
+  .photo-slot .mono{
+    font-family:'Fraunces', serif;
+    font-style: italic;
+    color: rgba(255,255,255,0.85);
+    font-size: 15px;
+  }
+
+  .photo-slot.small{ aspect-ratio: 1/1; }
+
+  .placeholder-note{
+    font-size: 12.5px;
+    font-style: italic;
+    color: var(--ink-soft);
+    margin-top: 8px;
+  }
+
+  @media (max-width: 800px){
+    .hero-grid{ grid-template-columns: 1fr; }
+    .hero h1{ font-size: 42px; max-width: none; }
+  }
+
+  /* ---------- SECTION SHELL ---------- */
+
+  section{
+    padding: 80px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .section-head{
+    display:grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 40px;
+    margin-bottom: 48px;
+  }
+
+  .section-head h2{ font-size: 34px; }
+
+  .section-head .sub{
+    color: var(--ink-soft);
+    font-size: 16px;
+    max-width: 46ch;
+    align-self: end;
+  }
+
+  @media (max-width: 720px){
+    .section-head{ grid-template-columns: 1fr; gap: 12px; }
+  }
+
+  /* ---------- SOBRE ---------- */
+
+  .sobre-grid{
+    display:grid;
+    grid-template-columns: 1fr 0.6fr;
+    gap: 56px;
+  }
+
+  .sobre-grid p{
+    font-size: 17px;
+    color: var(--ink-soft);
+    max-width: 56ch;
+  }
+
+  .sobre-grid p + p{ margin-top: 18px; }
+
+  @media (max-width: 800px){
+    .sobre-grid{ grid-template-columns: 1fr; }
+  }
+
+  /* ---------- NÚMEROS (stat rail) ---------- */
+
+  .stat-rail{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--line-strong);
+  }
+
+  .stat{
+    padding: 28px 24px 0;
+    border-right: 1px solid var(--line-strong);
+  }
+
+  .stat:last-child{ border-right: none; }
+
+  .stat .num{
+    font-family:'Fraunces', serif;
+    font-size: 40px;
+    color: var(--accent);
+  }
+
+  .stat .label{
+    margin-top: 6px;
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+
+  @media (max-width: 800px){
+    .stat-rail{ grid-template-columns: repeat(2, 1fr); }
+    .stat{ border-bottom: 1px solid var(--line-strong); padding-bottom: 24px; }
+  }
+
+  /* demografia bars */
+
+  .demo-block{
+    margin-top: 64px;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+  }
+
+  .demo-block h3{
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Work Sans', sans-serif;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+
+  .bar-row{
+    display:flex;
+    align-items:center;
+    gap: 14px;
+    margin-bottom: 12px;
+    font-size: 14px;
+  }
+
+  .bar-row .bar-label{ width: 76px; color: var(--ink-soft); flex-shrink:0; }
+
+  .bar-track{
+    flex:1;
+    height: 8px;
+    background: var(--line);
+    border-radius: 1px;
+    overflow:hidden;
+  }
+
+  .bar-fill{
+    height:100%;
+    background: var(--brass);
+  }
+
+  .bar-pct{ width: 38px; text-align:right; color: var(--ink-soft); flex-shrink:0; }
+
+  .city-list{ list-style:none; padding:0; margin:0; }
+  .city-list li{
+    display:flex;
+    justify-content:space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 15px;
+  }
+  .city-list li span:last-child{ color: var(--ink-soft); }
+
+  @media (max-width: 800px){
+    .demo-block{ grid-template-columns: 1fr; gap: 40px; }
+  }
+
+  /* ---------- TRABALHOS ---------- */
+
+  .case-grid{
+    display:grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 28px;
+  }
+
+  .case-main{
+    background: var(--panel);
+    border: 1px solid var(--line);
+    padding: 32px;
+  }
+
+  .case-side{
+    display:grid;
+    gap: 28px;
+  }
+
+  .case-card{
+    background: var(--panel);
+    border: 1px solid var(--line);
+    padding: 26px;
+  }
+
+  .case-brand{
+    font-family:'Fraunces', serif;
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  .case-desc{
+    color: var(--ink-soft);
+    font-size: 15px;
+  }
+
+  .case-result{
+    margin-top: 16px;
+    font-size: 14px;
+    color: var(--accent);
+  }
+
+  @media (max-width: 800px){
+    .case-grid{ grid-template-columns: 1fr; }
+  }
+
+  /* ---------- ESTÉTICA / FEED ---------- */
+
+  .feed-grid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+  }
+
+  .feed-item{
+    aspect-ratio: 1/1;
+  }
+
+  .feed-item:nth-child(1){ background:#7C303B; }
+  .feed-item:nth-child(2){ background:#B08968; }
+  .feed-item:nth-child(3){ background:#4A1A22; }
+  .feed-item:nth-child(4){ background:#8C5A3C; }
+  .feed-item:nth-child(5){ background:#2A0F14; }
+  .feed-item:nth-child(6){ background:#A67C3D; }
+
+  @media (max-width: 600px){
+    .feed-grid{ grid-template-columns: repeat(3, 1fr); }
+  }
+
+  /* ---------- DEPOIMENTOS ---------- */
+
+  .quote-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+
+  blockquote{
+    margin:0;
+    font-family:'Fraunces', serif;
+    font-style: italic;
+    font-size: 21px;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+
+  .quote-source{
+    margin-top: 18px;
+    font-family:'Work Sans', sans-serif;
+    font-style: normal;
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+
+  @media (max-width: 800px){
+    .quote-grid{ grid-template-columns: 1fr; gap: 40px; }
+  }
+
+  /* ---------- FORMATOS ---------- */
+
+  .format-list{
+    border-top: 1px solid var(--line-strong);
+  }
+
+  .format-row{
+    display:grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 32px;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .format-row h3{
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Fraunces', serif;
+  }
+
+  .format-row p{
+    color: var(--ink-soft);
+    font-size: 15px;
+    max-width: 52ch;
+  }
+
+  @media (max-width: 700px){
+    .format-row{ grid-template-columns: 1fr; gap: 8px; }
+  }
+
+  /* ---------- CONTATO / FOOTER ---------- */
+
+  footer{
+    background: var(--ink);
+    color: #EDE8DF;
+    padding: 88px 0 48px;
+  }
+
+  footer h2{
+    color: #EDE8DF;
+    font-size: 36px;
+    max-width: 16ch;
+  }
+
+  .contact-row{
+    margin-top: 40px;
+    display:flex;
+    gap: 48px;
+    flex-wrap: wrap;
+  }
+
+  .contact-item .label{
+    font-size: 13px;
+    color: #A69B8A;
+    margin-bottom: 6px;
+  }
+
+  .contact-item .value{
+    font-size: 17px;
+  }
+
+  .contact-item a{ text-decoration: none; border-bottom: 1px solid #6E2430; }
+  .contact-item a:hover{ color: #C98A94; }
+
+  .foot-fine{
+    margin-top: 72px;
+    padding-top: 24px;
+    border-top: 1px solid #3A342C;
+    font-size: 13px;
+    color: #857B6C;
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-row">
+    <div class="nav-mark">Mel Duarte</div>
+    <nav class="nav-links">
+      <a href="#sobre">Sobre</a>
+      <a href="#numeros">Números</a>
+      <a href="#trabalhos">Trabalhos</a>
+      <a href="#parceria">Parceria</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="hero-eyebrow">Moda &amp; estilo de vida</div>
+      <h1>Conteúdo que faz marca virar conversa.</h1>
+      <p class="hero-tagline">Mel Duarte cria conteúdo de moda e lifestyle para um público que decide o que compra pelo que vê nas redes — não pelo que a propaganda diz.</p>
+      <div class="hero-follow">
+        <span class="num">160 mil</span>
+        <span class="label">seguidores ativos<br>no Instagram</span>
+      </div>
+    </div>
+    <div>
+      <div class="photo-slot">
+        <span class="mono">retrato — Mel D.</span>
+      </div>
+      <p class="placeholder-note">espaço reservado para foto de destaque</p>
+    </div>
+  </div>
+</section>
+
+<section id="sobre">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Sobre</h2>
+      <p class="sub">Quem é a pessoa por trás dos números — e por que isso importa pra quem vai investir numa parceria.</p>
+    </div>
+    <div class="sobre-grid">
+      <div>
+        <p>Mel começou a documentar looks de brechó em 2019, num quarto dividido com duas colegas de faculdade. Seis anos depois, o feed virou referência pra quem busca moda acessível com identidade — sem abrir mão de criticar o que não presta.</p>
+        <p>O tom é direto, bem-humorado e nada empostado. As parcerias que funcionam melhor são as que deixam espaço pra essa voz aparecer, em vez de um roteiro fechado de agência.</p>
+      </div>
+      <div>
+        <div class="photo-slot small">
+          <span class="mono">bastidores</span>
+        </div>
+        <p class="placeholder-note">espaço reservado para foto secundária</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="numeros">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Números</h2>
+      <p class="sub">Dados consolidados dos últimos 90 dias, direto do Instagram Insights.</p>
+    </div>
+
+    <div class="stat-rail">
+      <div class="stat">
+        <div class="num">160k</div>
+        <div class="label">seguidores no Instagram</div>
+      </div>
+      <div class="stat">
+        <div class="num">6,8%</div>
+        <div class="label">engajamento médio</div>
+      </div>
+      <div class="stat">
+        <div class="num">42k</div>
+        <div class="label">alcance médio por post</div>
+      </div>
+      <div class="stat">
+        <div class="num">95k</div>
+        <div class="label">visualizações médias em Reels</div>
+      </div>
+    </div>
+
+    <div class="demo-block">
+      <div>
+        <h3>Faixa etária do público</h3>
+        <div class="bar-row">
+          <span class="bar-label">18–24</span>
+          <div class="bar-track"><div class="bar-fill" style="width:32%"></div></div>
+          <span class="bar-pct">32%</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">25–34</span>
+          <div class="bar-track"><div class="bar-fill" style="width:41%"></div></div>
+          <span class="bar-pct">41%</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">35–44</span>
+          <div class="bar-track"><div class="bar-fill" style="width:18%"></div></div>
+          <span class="bar-pct">18%</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">45+</span>
+          <div class="bar-track"><div class="bar-fill" style="width:9%"></div></div>
+          <span class="bar-pct">9%</span>
+        </div>
+      </div>
+      <div>
+        <h3>Principais cidades</h3>
+        <ul class="city-list">
+          <li><span>São Paulo, SP</span><span>24%</span></li>
+          <li><span>Rio de Janeiro, RJ</span><span>15%</span></li>
+          <li><span>Belo Horizonte, MG</span><span>9%</span></li>
+          <li><span>Curitiba, PR</span><span>7%</span></li>
+          <li><span>Porto Alegre, RS</span><span>6%</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="trabalhos">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Trabalhos</h2>
+      <p class="sub">Uma seleção de campanhas recentes — dados fictícios, só pra ilustrar como fica a apresentação.</p>
+    </div>
+
+    <div class="case-grid">
+      <div class="case-main">
+        <div class="case-brand">Rosa Nostra Beauty</div>
+        <p class="case-desc">Campanha de lançamento de linha de skincare: 3 Reels + 1 post fixo ao longo de duas semanas, com cupom exclusivo de desconto.</p>
+        <div class="case-result">alcance total de 380k · 4,2k cliques no cupom</div>
+      </div>
+      <div class="case-side">
+        <div class="case-card">
+          <div class="case-brand">Cato &amp; Lima</div>
+          <p class="case-desc">Unboxing de coleção cápsula de inverno, com destaque nos Stories.</p>
+        </div>
+        <div class="case-card">
+          <div class="case-brand">Verde Studio</div>
+          <p class="case-desc">Parceria de longo prazo (6 meses) como embaixadora de acessórios sustentáveis.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Estética</h2>
+      <p class="sub">O estilo visual que sustenta o feed — aqui representado por blocos de cor no lugar das fotos reais.</p>
+    </div>
+    <div class="feed-grid">
+      <div class="feed-item"></div>
+      <div class="feed-item"></div>
+      <div class="feed-item"></div>
+      <div class="feed-item"></div>
+      <div class="feed-item"></div>
+      <div class="feed-item"></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Depoimentos</h2>
+      <p class="sub">O que marcas parceiras dizem sobre trabalhar com a Mel.</p>
+    </div>
+    <div class="quote-grid">
+      <div>
+        <blockquote>"O retorno foi muito acima do que a gente costuma ver em campanhas de influência — e o conteúdo pareceu genuíno do início ao fim."</blockquote>
+        <div class="quote-source">Marketing, Rosa Nostra Beauty</div>
+      </div>
+      <div>
+        <blockquote>"A Mel entende o produto antes de gravar. Isso faz toda a diferença no resultado final."</blockquote>
+        <div class="quote-source">Fundadora, Verde Studio</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="parceria">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Formatos de parceria</h2>
+      <p class="sub">O que pode ser contratado, de acordo com o objetivo da campanha.</p>
+    </div>
+    <div class="format-list">
+      <div class="format-row">
+        <h3>Stories</h3>
+        <p>Sequência de 3 a 5 stories com menção, link ou cupom — ideal para lançamentos rápidos e promoções.</p>
+      </div>
+      <div class="format-row">
+        <h3>Reels</h3>
+        <p>Vídeo produzido sob medida para o produto ou serviço, com roteiro alinhado entre marca e criadora.</p>
+      </div>
+      <div class="format-row">
+        <h3>Post fixo</h3>
+        <p>Publicação permanente no feed, com maior durabilidade e alcance orgânico ao longo do tempo.</p>
+      </div>
+      <div class="format-row">
+        <h3>Parceria de longo prazo</h3>
+        <p>Presença recorrente ao longo de meses, indicada para construção de marca e embaixatriz.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contato">
+  <div class="wrap">
+    <h2>Vamos conversar sobre uma parceria?</h2>
+    <div class="contact-row">
+      <div class="contact-item">
+        <div class="label">E-mail comercial</div>
+        <div class="value"><a href="mailto:contato@agencia-exemplo.com.br">contato@agencia-exemplo.com.br</a></div>
+      </div>
+      <div class="contact-item">
+        <div class="label">WhatsApp</div>
+        <div class="value"><a href="#">(11) 00000-0000</a></div>
+      </div>
+      <div class="contact-item">
+        <div class="label">Instagram</div>
+        <div class="value"><a href="#">@meladuarte</a></div>
+      </div>
+    </div>
+    <div class="foot-fine">Este é um modelo de exemplo com dados fictícios, criado como referência antes do briefing final.</div>
+  </div>
+</footer>
+
+</body>
+</html>
